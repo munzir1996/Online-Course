@@ -7,7 +7,7 @@
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li>
-                <a href="{{route('admin')}}">Adminpanel</a>
+                <a href="{{route('admin')}}">Dashboard</a>
             </li>
             <li class="active">Add Course</li>
         </ol>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-info waves-effect waves-light m-r-10">Submit</button>
-                <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
+                <a href="{{route('admincourses.index')}}" class="btn btn-inverse waves-effect waves-light">Cancel</a>
             </form>
         </div>
     </div>

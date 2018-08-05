@@ -128,10 +128,10 @@
                     <div class="gt_comment_wrap">
                         <div class="gt_comment_des">
                             <h6>
-                                <a href="#">{{$comment->user->name}}</a>
+                                <a>{{$comment->user->name}}</a>
                             </h6>
                             <div class="gt_comment_date">
-                                <span>{{ date('M j, Y', strtotime($comment->created_at)) }}</span>
+                                <span>{{ date('M j, Y | H:i:s', strtotime($comment->created_at)) }}</span>
                                 <!-- <a herf="#">03:26 pm</a> -->
                             </div>
                             <p>{{$comment->comment}}</p>
@@ -156,7 +156,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="gt_commet_field">
-                            <button type="submit">Submit</button>
+                            <button type="submit">Comment</button>
                         </div>
                     </div>
 

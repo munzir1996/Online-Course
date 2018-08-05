@@ -16,9 +16,7 @@ Route::get('admin', function() {
 
 Route::prefix('admin')->middleware('auth')->name('admin')->group(function(){
     
-    Route::get('/', function() {
-        return view('admin.welcome');
-    });
+    Route::get('/', 'PagesController@getDashboard');
 
     Route::resource('teachers', 'AdminTeacherController');
     Route::resource('users', 'AdminUserController');

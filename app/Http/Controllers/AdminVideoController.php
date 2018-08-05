@@ -18,7 +18,9 @@ class AdminVideoController extends Controller
      */
     public function index()
     {
-        //
+        $videos = Video::all();
+
+        return view('admin.videos.index')->withVideos($videos);
     }
 
     /**

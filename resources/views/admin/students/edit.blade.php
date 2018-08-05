@@ -7,7 +7,7 @@
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li>
-                <a href="{{route('admin')}}">Adminpanel</a>
+                <a href="{{route('admin')}}">Dashboard</a>
             </li>
             <li class="active">Edit Student</li>
         </ol>
@@ -26,14 +26,14 @@
                     <label class="col-md-12" for="name">Name
                     </label>
                     <div class="col-md-12">
-                        <input type="text" id="name" name="name" class="form-control" placeholder="{{$user->name}}">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="{{$user->name}}" value="{{$user->name}}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-12" for="email">Email
                     </label>
                     <div class="col-md-12">
-                        <input type="email" id="email" name="email" class="form-control" placeholder="{{$user->email}}">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="{{$user->email}}" value="{{$user->email}}">
                     </div>
                 </div>
                 <div class="form-group">
@@ -45,7 +45,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-info waves-effect waves-light m-r-10">Edit</button>
-                <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
+                <a href="{{route('adminusers.index')}}" class="btn btn-inverse waves-effect waves-light">Cancel</a>
             </form>
         </div>
     </div>

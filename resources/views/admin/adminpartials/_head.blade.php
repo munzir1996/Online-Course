@@ -8,6 +8,8 @@
     <link href="{{asset('vendor/css/sidebar-nav.min.css')}}" rel="stylesheet">
     <!-- animation CSS -->
     <link href="{{asset('vendor/css/admin/animate.css')}}" rel="stylesheet">
+    <!-- spinners CSS -->
+    <link href="{{asset('vendor/css/admin/spinners.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('vendor/css/admin/style.css')}}" rel="stylesheet">
     <!-- color CSS -->

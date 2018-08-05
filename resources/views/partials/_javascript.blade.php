@@ -16,4 +16,5 @@
     <!--Way Points Javascript-->
     <script src="{{asset('vendor/js/waypoints-min.js')}}"></script>
     <!--Custom JavaScript-->
-	<script src="{{asset('vendor/js/custom.js')}}"></script>
+    <script src="{{asset('vendor/js/custom.js')}}"></script>
+

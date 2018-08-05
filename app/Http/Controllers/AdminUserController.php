@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Session;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
@@ -39,7 +40,7 @@ class AdminUserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:100',
-            'email' => 'sometimes|max:100|unique:users,email',
+            'email' => 'required|max:100|unique:users,email',
             'password' => 'required|min:6',
         ]);
 
@@ -88,7 +89,33 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:100',
+            'email' => 'sometimes|max:100',
+            'password' => 'sometimes|min:6',
+        ]);
+
+        $user = User::findOrFail($id);
+        if ($request->has('name'))
+        {
+            $user->name = $request->name;
+        }
+        if ($request->has('email'))
+        {
+            $user->email = $request->email;
+        }
+        
+        if ($request->has('password'))
+        {
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        Session::flash('success', 'The User was successfuly Updated!');
+
+        //Redirect to another page
+		return redirect()->route('adminusers.edit', $user->id);
     }
 
     /**
@@ -99,6 +126,12 @@ class AdminUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findorFail($id);
+        $user->delete();
+        
+        Session::flash('success', 'The User was successfuly Deleted!');
+
+        //Redirect to another page
+		return redirect()->route('adminusers.index');
     }
 }

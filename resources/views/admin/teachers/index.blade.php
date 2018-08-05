@@ -7,7 +7,7 @@
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li>
-                <a href="{{route('admin')}}">Adminpanel</a>
+                <a href="{{route('admin')}}">Dashboard</a>
             </li>
             <li class="active">All Teachers</li>
         </ol>
@@ -39,11 +39,14 @@
                             <td>{{$teacher->degree}}</td>
                             <td>{{$teacher->department}}</td>
                             <td class="text-nowrap">
+                                <a href="{{route('adminteachers.show', $teacher->id)}}" data-toggle="tooltip" data-original-title="Show">
+                                    <i class="fa fa-eye text-inverse m-r-10"></i>
+                                </a>
                                 <a href="{{route('adminteachers.edit', $teacher->id)}}" data-toggle="tooltip" data-original-title="Edit">
                                     <i class="fa fa-pencil text-inverse m-r-10"></i>
                                 </a>
-                                <a href="{{route('adminteachers.show', $teacher->id)}}" data-toggle="tooltip" data-original-title="Show">
-                                    <i class="fa fa-eye text-inverse"></i>
+                                <a href="#" data-toggle="tooltip" data-original-title="Delete">
+                                    <i class="fa fa-close text-danger"></i>
                                 </a>
                             </td>
                         </tr>

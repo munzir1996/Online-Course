@@ -159,7 +159,7 @@ class AdminCourseController extends Controller
 
         $course->save();
 
-        Session::flash('success', 'The course was successfuly added!');
+        Session::flash('success', 'The course was successfuly Updated!');
 
         //Redirect to another page
 		return redirect()->route('admincourses.edit', $course->id);

@@ -6,7 +6,7 @@
             <i class="ti-menu"></i>
         </a>
         <div class="top-left-part">
-            <a class="logo" href="index.html">
+            <a class="logo" href="{{ route('admin') }}">
                 
                 <span class="hidden-xs" style="display: inline;">
                     <strong>Edu</strong>Learn</span>

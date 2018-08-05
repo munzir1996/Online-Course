@@ -20,6 +20,10 @@
     <!-- jQuery peity -->
     <script src="{{asset('vendor/js/jquery.peity.init.js')}}"></script>
     <script src="{{asset('vendor/js/jquery.peity.min.js')}}"></script>
+    <!--Counter js -->
+    <script src="{{asset('vendor/js/jquery.waypoints.js')}}"></script>
+    <script src="{{asset('vendor/js/jquery.counterup.min.js')}}"></script>
+
  
 
 

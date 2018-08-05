@@ -7,7 +7,7 @@
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li>
-                <a href="{{route('admin')}}">Adminpanel</a>
+                <a href="{{route('admin')}}">Dashboard</a>
             </li>
             <li class="active">Add Libary Assets</li>
         </ol>

@@ -86,6 +86,7 @@ class AdminCourseController extends Controller
     public function show($id)
     {
         $course = Course::findOrFail($id);
+
         return view('admin.courses.show')->withCourse($course);
     }
 

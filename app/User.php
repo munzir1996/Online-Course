@@ -36,4 +36,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Subscribe');
     }
+
+    public function userView()
+    {
+        return $this->belongsTo(UserViews::class);
+    }
 }

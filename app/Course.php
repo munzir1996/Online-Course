@@ -11,6 +11,11 @@ class Course extends Model
         return $this->belongsTo('App\Teacher');
     }
 
+    public function userView()
+    {
+        return $this->belongsTo(UserViews::class);
+    }
+
     public function courseComments()
     {
         return $this->hasMany('App\CourseComment');

@@ -25,5 +25,9 @@
     <link href="{{asset('vendor/css/color.css')}}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{asset('vendor/css/responsive.css')}}" rel="stylesheet">
+    <!-- DataTable -->
+    <link href="{{asset('vendor/css/jquery.dataTables.min.css')}}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    
 
 <title>Edu Learn @yield('title')</title>

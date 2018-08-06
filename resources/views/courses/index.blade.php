@@ -51,7 +51,7 @@
                                 </div>
                                 <ul>
                                     <li><i class="fa fa-comment"></i><a href="#">{{$course->courseComments->count()}}</a></li>
-                                    <li><i class="fa fa-users"></i><a href="#">283</a></li>
+                                    <li><i class="fa fa-users"></i><a href="#">{{$course->subscribes->count()}}</a></li>
                                 </ul>
                             </div>
                         </div>

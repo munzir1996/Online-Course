@@ -37,10 +37,10 @@
                             <td>{{$video->course->name}}</td>
                             <td>{{$video->name}}</td>
                             <td class="text-nowrap">
-                                <a href="{{route('adminteachers.show', $video->id)}}" data-toggle="tooltip" data-original-title="Show">
+                                <a href="{{route('adminvideos.show', $video->id)}}" data-toggle="tooltip" data-original-title="Show">
                                     <i class="fa fa-eye text-inverse m-r-10"></i>
                                 </a>
-                                <a href="{{route('adminteachers.edit', $video->id)}}" data-toggle="tooltip" data-original-title="Edit">
+                                <a href="{{route('adminvideos.edit', $video->id)}}" data-toggle="tooltip" data-original-title="Edit">
                                     <i class="fa fa-pencil text-inverse m-r-10"></i>
                                 </a>
                                 <a href="#" data-toggle="tooltip" data-original-title="Delete">

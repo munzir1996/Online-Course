@@ -32,37 +32,12 @@
             <!--Blog Detail Wrap Start-->
             <div class="col-md-8">
                 <div class="ct_blog_detail_outer_wrap">
-                    <div class="ct_blog_detail_top">
-                        <h4>{{$course->name}}</h4>
-                        <ul>
-                            <li>
-                                <p>
-                                    <span>Teacher</span>
-                                    <span>{{$course->teacher->name}}</span>
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    <span>Category</span>
-                                    <span>Development</span>
-                                </p>
-                            </li>
-                        </ul>
-                        <form class="form-material form-horizontal" method="POST" action="{{ route('subscribe.user', $course->id) }}" enctype="multipart/form-data">
-                            @csrf
-                            
-                            @if($subscribe)
-                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Subscribe</button>
-                            @endif
-                            
-                        </form>
-                        @if(!$subscribe)
-                            <a href="{{ route('videos.course', $course->id) }}" class="btn btn-default waves-effect waves-light m-r-10">View Videos</a>
-                        @endif
-                    </div>
+                    
                     <div class="ct_blog_detail_des">
                         <figure>
-                            <img src="{{asset('images/'.$course->image.'/'.$course->image)}}" alt="">
+                                <video width="320" height="240" controls>
+                                    <source src="{{asset($video->video)}}" type="video/mp4">
+                                  </video>
                         </figure>
                         <div class="ct_course_detail_wrap">
                             <h5>Course Information</h5>
@@ -129,53 +104,7 @@
                 </div>
             </div>
         </div>
-        <!--Comment Wrap Start-->
-        <div class="gt_comment_list_wrap ct_blog_author">
-            <h5>{{$comments->count()}} Comment</h5>
-            <ul>
-                @foreach($comments as $comment)
-                <li>
-                    <div class="gt_comment_wrap">
-                        <div class="gt_comment_des">
-                            <h6>
-                                <a>{{$comment->user->name}}</a>
-                            </h6>
-                            <div class="gt_comment_date">
-                                <span>{{ date('M j, Y | H:i:s', strtotime($comment->created_at)) }}</span>
-                                <!-- <a herf="#">03:26 pm</a> -->
-                            </div>
-                            <p>{{$comment->comment}}</p>
-                        </div>
-                    </div>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        <!--Comment Wrap End-->
-
-        <!--Add Acomment Wrap Start-->
-        <form action="{{route('courses.store')}}" method="POST">
-            @csrf
-            <div class="gt_post_comment_wrap ct_blog_author">
-                <h5>Post Comments</h5>
-                <form class="row">
-                    <div class="col-md-12">
-                        <div class="gt_commet_field">
-                            <textarea name="comment" placeholder="Message*"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="gt_commet_field">
-                            <button type="submit">Comment</button>
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                    <input type="hidden" name="course_id" value="{{$course->id}}">
-                </form>
-            </div>
-        </form>
-        <!--Add Acomment Wrap End-->
+        
     </div>
 </section>
 

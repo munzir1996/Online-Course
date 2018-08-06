@@ -17,4 +17,7 @@
     <script src="{{asset('vendor/js/waypoints-min.js')}}"></script>
     <!--Custom JavaScript-->
     <script src="{{asset('vendor/js/custom.js')}}"></script>
-
+    <!-- DataTable -->
+    <script src="{{asset('vendor/js/jquery.dataTables.min.js')}}"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    

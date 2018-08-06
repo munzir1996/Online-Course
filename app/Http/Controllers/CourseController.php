@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\CourseComment;
 use App\Course;
 use Session;
+use App\Subscribe;
 use Illuminate\Http\Request;
+use  Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -16,8 +18,10 @@ class CourseController extends Controller
      */
     public function index()
     {
+
+        $subscribes = Subscribe::all();
         $courses = Course::all();
-        return view('courses.index')->withCourses($courses);
+        return view('courses.index')->withCourses($courses)->withSubscribes($subscribes);
     }
 
     /**
@@ -67,7 +71,21 @@ class CourseController extends Controller
     {
         $course = Course::findOrFail($id);
         $comments = CourseComment::where('course_id', $id)->get();
-        return view('courses.show')->withCourse($course)->withComments($comments);
+
+        $subscribe = Subscribe::where('user_id', Auth::user()->id)->where('course_id', $id)->first();
+        
+        if(empty($subscribe))
+        {
+            $value = true;
+        }
+        else 
+        {
+            $value = false;
+        }
+
+        $subscribe = $value;
+
+        return view('courses.show')->withCourse($course)->withComments($comments)->withSubscribe($subscribe);
     }
 
     /**
